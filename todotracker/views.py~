@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def frontpageview (request, message=None):
-    output = "front page"
+    output = "hello world"
     return HttpResponse(output)
 
 #### TODO MANAGEMENT ####

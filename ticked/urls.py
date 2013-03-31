@@ -5,8 +5,28 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'ticked.views.home', name='home'),
+    
+    url(r'^$', 'todotracker.views.frontpageview', name='frontpageview'),
+    url(r'^frontpage/$', 'todotracker.views.frontpageview', name='frontpage-by-specific-url'),
+
+    #### TODO MANAGEMENT ####
+    url(r'^todos/view/$', 'todotracker.views.viewtodosview', name='viewtodosview'),
+    url(r'^todos/view/(\d*)/$', 'todotracker.views.viewtodosview', name='viewspecifictodo'),
+    url(r'^todos/add/$', 'todotracker.views.addtodoview', name='addtodoview'),
+    url(r'^todos/tick/(\d*)/$', 'todotracker.views.ticktodoview', name='ticktodoview'),
+    url(r'^todos/untick/(\d*)/$', 'todotracker.views.unticktodoview', name='unticktodoview'),
+    url(r'^todos/view/ticked/$', 'todotracker.views.viewtickedtodoview', name='viewtickedtodo'),
+    url(r'^todos/delete/(\d*)/$', 'todotracker.views.deletetodoview', name='deletetodoview'),
+    url(r'^todos/edit/(\d*)/$', 'todotracker.views.edittodoview', name='edittodoview'),
+
+    #### USER MANAGEMENT ####    
+    url(r'^user/login/$', 'todotracker.views.loginview', name='loginview'),
+    url(r'^user/logout/$', 'todotracker.views.logoutview', name='logoutview'),
+    url(r'^user/new/$', 'todotracker.views.setupnewuserview', name='setupnewuserview'),
+    url(r'^user/create/$', 'todotracker.views.createnewuserview', name='createnewuserview'),
+    url(r'^user/edit/$', 'todotracker.views.edituserview', name='edituserview'),
+    url(r'^user/delete/$', 'todotracker.views.deleteuserview', name='deleteuserview'),
+
     # url(r'^ticked/', include('ticked.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tick it - the new todo management system</title>
+    <!-- Twitter Bootstrap css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Custom css-->
+    <link href="style.css" rel="stylesheet">    
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top navbar-inverse"><!-- nav-bar -->
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+                <a class="brand">Tickit</a>
+            	<ul class="nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li class="dropdown">
+        	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Todos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">View todos</a></li>
+                      <li><a href="#">View ticked todos</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#addTodoModal" data-toggle="modal">New todo</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#editUserModal" data-toggle="modal">Edit account</a></li>
+                      <li><a href="#changePasswordModal" data-toggle="modal">Change password</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Log out</a></li>
+                    </ul>
+            	  </li>
+                </ul>
+                <form method="post" action="/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >
+        	      <input type="email" class="span2 lower-height-input-form" id="username" name="username" placeholder="E-mail" required />
+        	      <input type="password" class="span2 lower-height-input-form" id="password" name="password" placeholder="Password" required />
+        	      <input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary btn-small" />
+        	      <input type="button" value="New user" class="btn btn-small" href="#newUserModal" data-toggle="modal" />
+      	      </form>      	    
+            </div><!-- / span -->
+          </div><!-- / row -->
+        </div><!-- / container --> 
+      </div> <!-- / inner navbar -->
+    </nav><!-- / nav-bar --> 
+    <div class="container">    
+      <div class="row"><!-- row -->
+        <div class="span12"><!-- pagination -->
+          <nav class="pagination pagination-centered"">
+            <ul>
+              <li class="disabled"><a href="#">Prev</a></li>
+              <li class="disabled"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div><!-- / pagination -->
+	  </div><!-- / row -->
+      <section  id="todos-section" class="row"><!-- row -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+      </section><!-- / row todos -->
+      <div class="row"><!-- row -->
+        <div class="span12"><!-- pagination -->
+          <nav class="pagination pagination-centered"">
+            <ul>
+              <li class="disabled"><a href="#">Prev</a></li>
+              <li class="disabled"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div><!-- / pagination -->
+	  </div><!-- / row -->
+      <div class="row"><!-- row -->
+        <div class="span6 offset3"><!-- error alert -->
+          <article class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h5>Login failed.</h5>
+            The username and password that you provided was not recognized.<br> 
+            Your username should be the e-mail you signed up with.
+          </article>
+        </div><!-- / error alert -->
+	  </div><!-- / row -->
+      <div class="row"><!-- row -->
+        <div class="span6 offset3"><!-- success alert -->
+          <article class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h5>Account created</h5>
+            Your account was successfully created.
+          </article>
+        </div><!-- / success alert -->
+	  </div><!-- / row -->
+      <div class="row"><!-- row -->
+        <div class="span6 offset3"><!-- info alert -->
+          <article class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h5>No todos found</h5>
+            You currently have no todos. You may add one from the menu above!
+          </article>
+        </div><!-- / info alert -->
+	  </div><!-- / row -->
+      <section id="front-page-display" class="row"><!-- row -->
+        <div class="span8 offset2">
+          <div class="step-1-2-3">
+            <h3>1. Make a todo</h3>
+            "Redo the front page thingy"
+          </div>
+          <div class="step-1-2-3">
+            <h3>2. Do it</h3>
+            "Yeah, yeah - soon"
+          </div>
+          <div class="step-1-2-3">
+            <h3>3. Tick it of</h3>
+            "That's gonna be nice!"
+          </div>
+        </div>
+      </section><!-- / row -->
+    </div><!--/.container -->     
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="row">
+              <div class="span6"><small>© 2013 Tickit-team, unless otherwise noted.</small>
+              </div>
+              <div class="span3">&nbsp;
+              </div>         
+              <div class="span3"><!--<p><small>This website and content is the property of the site owner(s) and their affiliates.<br> This site is built using freely avalable tools such as <a href="https://www.djangoproject.com/">Django</a>, <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and <a href="http://jquery.com/">jQuery</a>. Pay them a visit at their respective webpages.</small></p>-->
+              </div>       
+            </div>
+          </div><!-- span -->
+        </div><!-- row -->
+      </div><!-- container --> 
+    </footer>
+    <!-- MODALS -->
+    <!-- Add todo modal -->
+    <article id="addTodoModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="addTodoModalLabel" aria-hidden="true">
+      <header class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="addTodoModalLabel">New todo</h3>
+      </header>
+      <div class="modal-body offset1">
+        <form method="post" action="/addtodo/" id="new-todo-form" class="todoform"><!--{% csrf_token %}-->
+          <fieldset>
+            <textarea id="headline" class="span3" name="headline" placeholder="Enter a headline for your Todo..." maxlength="50" rows="2" /></textarea>
+          </fieldset>
+          <fieldset>
+            <textarea id="bodytext" class="span3" name="bodytext" maxlength="300" rows="10" placeholder="Add a more detailed description of your Todo..." /></textarea>
+          </fieldset>
+      </div>
+      <footer class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Add todo</button>
+        </form>
+      </footer>
+    </article> 
+    <!-- / Add todo modal -->
+    <!-- New user modal -->
+    <article id="newUserModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="newUserModalLabel" aria-hidden="true">
+      <header class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="newUserModalLabel">Create an account</h3>
+      </header>
+      <div class="modal-body">
+        <form method="post" action="/newuser/" id="new-user-form" class="form-horizontal"><!--{% csrf_token %}-->
+          <div class="control-group">
+            <label class="control-label" for="email">E-mail</label>
+            <div class="controls">
+              <input type="email" id="email" placeholder="E-mail" required />
+              <span class="help-block"> <span class="label label-info"> Note </span> Your e-mail is also your username.</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+              <input type="password" id="password" placeholder="Password" required />
+            </div>
+          </div>          
+      </div>
+      <footer class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Create</button>
+        </form>
+      </footer>
+    </article> 
+    <!-- / New user modal -->
+    <!-- Edit user modal -->
+    <article id="editUserModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+      <header class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="newUserModalLabel">Edit your profile</h3>
+      </header>
+      <div class="modal-body">
+        <form method="post" action="/edituser/" id="edit-user-form" class="form-horizontal"><!--{% csrf_token %}-->
+          <div class="control-group">
+            <label class="control-label" for="email">E-mail</label>
+            <div class="controls">
+              <input type="email" id="email" placeholder="E-mail">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="first_name">First name</label>
+            <div class="controls">
+              <input type="text" id="first_name" placeholder="First name">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="last_name">Last name</label>
+            <div class="controls">
+              <input type="text" id="last_name" placeholder="Last name">
+            </div>
+          </div>
+      </div>
+      <footer class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Update</button>
+        </form>
+      </footer>
+    </article> 
+    <!-- / Edit user modal -->
+    <!-- Change password modal -->
+    <article id="changePasswordModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+      <header class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="changePasswordModalLabel">Change password</h3>
+      </header>
+      <div class="modal-body">
+        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal"><!--{% csrf_token %}-->
+          <div class="control-group">
+            <label class="control-label" for="old_password">Old password</label>
+            <div class="controls">
+              <input type="password" id="old_password" placeholder="Password">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="new_password">New password</label>
+            <div class="controls">
+              <input type="password" id="new_password" placeholder="New Password">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="repeat_new_password">Repeat new password</label>
+            <div class="controls">
+              <input type="password" id="repeat_new_password" placeholder="New Password">
+            </div>
+          </div>
+      </div>
+      <footer class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Update</button>
+        </form>
+      </footer>
+    </article> 
+    <!-- / Change password modal -->
+	<!-- SCRIPTS -->
+    <script type="text/javascript" src="jquery.js"></script>  
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>  
+  </body>
+</html>
