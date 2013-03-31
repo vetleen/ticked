@@ -29,6 +29,8 @@ urlpatterns = patterns('',
     url(r'^user/edit/$', 'todotracker.views.edituserview', name='edituserview'),
     url(r'^user/delete/$', 'todotracker.views.deleteuserview', name='deleteuserview'),
 
+	#### STYLESHEETS ####
+    (r'^stylesheets/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': stylesheets }),
     # url(r'^ticked/', include('ticked.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
