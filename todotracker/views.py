@@ -11,8 +11,12 @@ from django.contrib.auth.decorators import login_required
 
 
 def frontpageview (request, message=None):
-    output = "front page"
-    return HttpResponse(output)
+    c = {}
+    c.update(csrf(request))
+    template = "base.html"
+    return render_to_response(template, c, context_instance=RequestContext(request))
+
+
 
 #### TODO MANAGEMENT ####
 def viewtodosview (request, pgnumb=1, message=None):
