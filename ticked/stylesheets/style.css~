@@ -21,7 +21,7 @@
 	background-color: #f7f7f7;
 	border: 1px solid #969696;
 	margin-bottom: 20px;
-	margin-top: 0px;
+	margin-top: 20px;
 	display: inline-block;
 	height: 220px;
 	width: 230px;
