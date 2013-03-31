@@ -49,8 +49,8 @@
         </div><!-- / container --> 
       </div> <!-- / inner navbar -->
     </nav><!-- / nav-bar --> 
-    <section class="container">    
-{% block content %}  {% endblock content %}  
+    <section class="container">{% block content %}  {% endblock content %} 
+    </section><!--/.container --> 
     <footer class="main-footer">
       <div class="container">
         <div class="row">
