@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
     </style>
     <!-- Twitter Bootstrap css-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="stylesheets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static "stylesheets/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
     <link href="stylesheets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <!-- Custom css-->
     <link href="stylesheets/style.css" rel="stylesheet">    
@@ -48,10 +49,10 @@
                 </ul>                
 {% if user.is_authenticated %}
                 <div id="login" class="pull-right">
-                  <p id="logged-in-notice">Your are logged in as {{ user.username }} | <a href="/logout/" class="loginout-link"> log out</a></p>
+                  <p id="logged-in-notice">Your are logged in as {{ user.username }} | <a href="/user/logout/" class="loginout-link"> log out</a></p>
                 </div>
 {% else %}                
-                <form method="post" action="/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >{% csrf_token %}
+                <form method="post" action="/user/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >{% csrf_token %}
         	      <input type="email" class="span2 lower-height-input-form" id="username" name="username" placeholder="E-mail" required />
         	      <input type="password" class="span2 lower-height-input-form" id="password" name="password" placeholder="Password" required />
         	      <input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary btn-small" />
