@@ -114,29 +114,10 @@ height: 100%;
 }
 
 /* STYLES FOR THE FOOTER */
-/*
+
 footer.main-footer {
-	background-color: #000; 
+	background-color: #fff; 
 	width: 100%;
 	margin-top: 0px;
 }
 
-.sticky-wrapper {
-min-height: 100%;
-height: auto !important;
-margin-bottom: -30px;
-}
-.sticky-footer, .sticky-push {
-height: 30px;
-}
-
-*/
-.sticky-wrapper {
-min-height: 100%;
-height: auto !important;
-height: 100%;
-margin: 0 auto -4em;
-}
-.sticky-footer, .sticky-push {
-height: 4em;
-}

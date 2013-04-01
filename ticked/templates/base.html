@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <meta charset="utf-8">
     <title>Tick it - the new todo management system</title>
     <style>
@@ -16,7 +19,6 @@
     <link href="stylesheets/style.css" rel="stylesheet">    
   </head>
   <body>
-  <div class="sticky-wrapper">
     <nav class="navbar navbar-fixed-top navbar-inverse"><!-- nav-bar -->
       <div class="navbar-inner">
         <div class="container">
@@ -43,12 +45,18 @@
                       <li><a href="#">Log out</a></li>
                     </ul>
             	  </li>
-                </ul>
+                </ul>                
+{% if user.is_authenticated %}
+	  <div id="login" class="pull-right">
+	    <p id="logged-in-notice">Your are logged in as {{ user.username }} | <a href="/logout/" class="loginout-link"> log out</a></p>
+	  </div>
+{% else %}                
                 <form method="post" action="/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >
         	      <input type="email" class="span2 lower-height-input-form" id="username" name="username" placeholder="E-mail" required />
         	      <input type="password" class="span2 lower-height-input-form" id="password" name="password" placeholder="Password" required />
         	      <input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary btn-small" />
         	      <input type="button" value="New user" class="btn btn-small" href="#newUserModal" data-toggle="modal" />
+{% endif %}        	      
       	      </form>      	    
             </div><!-- / span -->
           </div><!-- / row -->
@@ -57,16 +65,12 @@
     </nav><!-- / nav-bar --> 
     <section class="container content">{% block content %}  {% endblock content %} 
     </section><!--/.container -->
-    <div class="sticky-push"></div>
-            
- 
-    
-    <footer class="main-footer sticky-footer">
+    <footer class="main-footer">
       <div class="container">
         <div class="row">
           <div class="span12">
             <div class="row">
-              <div class="span6"><small>© 2013 Tickit-team, unless otherwise noted.</small>
+              <div class="span6"><small>&nbsp;</small>
               </div>
               <div class="span3">&nbsp;
               </div>         
@@ -199,7 +203,6 @@
     <!-- / Change password modal -->
 	<!-- SCRIPTS -->
     <script type="text/javascript" src="stylesheets/jquery.js"></script>  
-    <script type="text/javascript" src="stylesheets/bootstrap/js/bootstrap.js"></script> 
-  </div> <!-- sticky-wrapper --> 
+    <script type="text/javascript" src="stylesheets/bootstrap/js/bootstrap.js"></script>  
   </body>
 </html>

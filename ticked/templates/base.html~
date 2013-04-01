@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <meta charset="utf-8">
     <title>Tick it - the new todo management system</title>
+    <style>
+      * {
+         margin: 0;
+      }
+    </style>
     <!-- Twitter Bootstrap css-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="stylesheets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -11,7 +19,6 @@
     <link href="stylesheets/style.css" rel="stylesheet">    
   </head>
   <body>
-  <div class="sticky-wrapper">
     <nav class="navbar navbar-fixed-top navbar-inverse"><!-- nav-bar -->
       <div class="navbar-inner">
         <div class="container">
@@ -52,16 +59,12 @@
     </nav><!-- / nav-bar --> 
     <section class="container content">{% block content %}  {% endblock content %} 
     </section><!--/.container -->
-    <div class="sticky-push"></div>
-            
- 
-    
-    <footer class="main-footer sticky-footer">
+    <footer class="main-footer">
       <div class="container">
         <div class="row">
           <div class="span12">
             <div class="row">
-              <div class="span6"><small>© 2013 Tickit-team, unless otherwise noted.</small>
+              <div class="span6"><small>&nbsp;</small>
               </div>
               <div class="span3">&nbsp;
               </div>         
@@ -194,7 +197,6 @@
     <!-- / Change password modal -->
 	<!-- SCRIPTS -->
     <script type="text/javascript" src="stylesheets/jquery.js"></script>  
-    <script type="text/javascript" src="stylesheets/bootstrap/js/bootstrap.js"></script> 
-  </div> <!-- sticky-wrapper --> 
+    <script type="text/javascript" src="stylesheets/bootstrap/js/bootstrap.js"></script>  
   </body>
 </html>
