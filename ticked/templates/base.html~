@@ -11,6 +11,7 @@
     <link href="stylesheets/style.css" rel="stylesheet">    
   </head>
   <body>
+  <div class="sticky-wrapper">
     <nav class="navbar navbar-fixed-top navbar-inverse"><!-- nav-bar -->
       <div class="navbar-inner">
         <div class="container">
@@ -51,12 +52,8 @@
     </nav><!-- / nav-bar --> 
     <section class="container content">{% block content %}  {% endblock content %} 
     </section><!--/.container -->
-    
-    
-        <div class="sticky-wrapper">
-            &nbsp;
-            <div class="sticky-push"></div>
-        </div>
+    <div class="sticky-push"></div>
+            
  
     
     <footer class="main-footer sticky-footer">
@@ -197,6 +194,7 @@
     <!-- / Change password modal -->
 	<!-- SCRIPTS -->
     <script type="text/javascript" src="stylesheets/jquery.js"></script>  
-    <script type="text/javascript" src="stylesheets/bootstrap/js/bootstrap.js"></script>  
+    <script type="text/javascript" src="stylesheets/bootstrap/js/bootstrap.js"></script> 
+  </div> <!-- sticky-wrapper --> 
   </body>
 </html>

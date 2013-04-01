@@ -114,6 +114,7 @@ height: 100%;
 }
 
 /* STYLES FOR THE FOOTER */
+/*
 footer.main-footer {
 	background-color: #000; 
 	width: 100%;
@@ -121,7 +122,7 @@ footer.main-footer {
 }
 
 .sticky-wrapper {
-min-height: (100%-50px);
+min-height: 100%;
 height: auto !important;
 margin-bottom: -30px;
 }
@@ -129,4 +130,13 @@ margin-bottom: -30px;
 height: 30px;
 }
 
-
+*/
+.sticky-wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+}
+.sticky-footer, .sticky-push {
+height: 4em;
+}
