@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 def frontpageview (request, message=None):
     c = {}
     c.update(csrf(request))
-    template = "todos.html"
+    template = "frontpage.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
 
 
