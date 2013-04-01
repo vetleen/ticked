@@ -122,10 +122,10 @@ footer.main-footer {
 .sticky-wrapper {
 min-height: 100%;
 height: auto !important;
-margin-bottom: -60px;
+margin-bottom: -30px;
 }
 .sticky-footer, .sticky-push {
-height: -30px;
+height: 30px;
 }
 
 
