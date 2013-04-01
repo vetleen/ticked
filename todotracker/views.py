@@ -63,8 +63,8 @@ def loginview (request):
         return redirect(frontpageview)
 
 def logoutview (request):
-    output = "hello world"
-    return HttpResponse(output)
+    logout(request)
+    return redirect(frontpageview)
 
 def setupnewuserview (request):
     output = "hello world"
