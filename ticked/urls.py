@@ -5,7 +5,7 @@ import os.path
 # from django.contrib import admin
 # admin.autodiscover()
 
-stylesheets = os.path.join(os.path.dirname(__file__), 'static')
+static = os.path.join(os.path.dirname(__file__), 'static')
 
 urlpatterns = patterns('',
     
