@@ -49,9 +49,17 @@
         </div><!-- / container --> 
       </div> <!-- / inner navbar -->
     </nav><!-- / nav-bar --> 
-    <section class="container">{% block content %}  {% endblock content %} 
-    </section><!--/.container --> 
-    <footer class="main-footer">
+    <section class="container content">{% block content %}  {% endblock content %} 
+    </section><!--/.container -->
+    
+    
+        <div class="sticky-wrapper">
+            &nbsp;
+            <div class="sticky-push"></div>
+        </div>
+ 
+    
+    <footer class="main-footer sticky-footer">
       <div class="container">
         <div class="row">
           <div class="span12">

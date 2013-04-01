@@ -1,3 +1,6 @@
+html, body {
+height: 100%;
+}
 
 /* STYLES FOR THE NAV */
 .lower-height-input-form input[type="password"], .lower-height-input-form input[type="email"] {
@@ -110,7 +113,7 @@
   -moz-border-radius-bottomright: 4px;
 }
 
-/* STYLES FOR THE FOOTER*/
+/* STYLES FOR THE FOOTER */
 footer.main-footer {
 	background-color: #000; 
 	width: 100%;
@@ -118,6 +121,13 @@ footer.main-footer {
 	bottom: 0px;
 }
 
-
+.sticky-wrapper {
+min-height: 100%;
+height: auto !important;
+margin: 0 auto -4em;
+}
+.sticky-footer, .sticky-push {
+height: 4em;
+}
 
 
