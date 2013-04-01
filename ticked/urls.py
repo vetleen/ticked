@@ -5,7 +5,7 @@ import os.path
 # from django.contrib import admin
 # admin.autodiscover()
 
-stylesheets = os.path.join(os.path.dirname(__file__), 'stylesheets')
+stylesheets = os.path.join(os.path.dirname(__file__), 'static')
 
 urlpatterns = patterns('',
     
@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     url(r'^user/delete/$', 'todotracker.views.deleteuserview', name='deleteuserview'),
 
 	#### STYLESHEETS ####
-    (r'^stylesheets/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': stylesheets }),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': static }),
     # url(r'^ticked/', include('ticked.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
