@@ -55,7 +55,7 @@ def loginview (request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return redirect(viewtodosview)
+            return redirect(frontpageview)
         else:
             return redirect(frontpageview)
     else:

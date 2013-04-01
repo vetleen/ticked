@@ -47,11 +47,11 @@
             	  </li>
                 </ul>                
 {% if user.is_authenticated %}
-	  <div id="login" class="pull-right">
-	    <p id="logged-in-notice">Your are logged in as {{ user.username }} | <a href="/logout/" class="loginout-link"> log out</a></p>
-	  </div>
+                <div id="login" class="pull-right">
+                  <p id="logged-in-notice">Your are logged in as {{ user.username }} | <a href="/logout/" class="loginout-link"> log out</a></p>
+                </div>
 {% else %}                
-                <form method="post" action="/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >
+                <form method="post" action="/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >{% csrf_token %}
         	      <input type="email" class="span2 lower-height-input-form" id="username" name="username" placeholder="E-mail" required />
         	      <input type="password" class="span2 lower-height-input-form" id="password" name="password" placeholder="Password" required />
         	      <input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary btn-small" />
