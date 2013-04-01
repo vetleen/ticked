@@ -1,0 +1,123 @@
+html, body {
+height: 100%;
+}
+
+/* STYLES FOR THE NAV */
+.lower-height-input-form input[type="password"], .lower-height-input-form input[type="email"] {
+	font-size: 12px;
+	height: 14px;
+	padding: 2px;
+	
+}
+
+.lower-height-input-form {
+	margin-top: 5px;
+}
+/* CONTENT */
+.content {
+	margin-top: 70px;
+}
+
+/* STYLES FOR THE FRONT PAGE */
+
+.step-1-2-3{
+	background-color: #f7f7f7;
+	border: 1px solid #969696;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	display: inline-block;
+	height: 220px;
+	width: 230px;
+	padding: 10px;
+	padding-top: 0px;
+}
+
+/* STYLES FOR THE TODOS*/
+
+.todo{
+	position: relative;
+	float: left;
+	height: 220px;
+	width: 230px;
+	padding: 10px;
+	padding-top: 0px;
+	margin-bottom: 20px;
+	display: inline;
+	background: #ffffcc;
+	border: 1px solid #fff200;
+	overflow: hidden;
+
+}
+
+.todo-options {
+  margin: 0px 0;
+  font-size: 12px;
+	position: absolute;
+	bottom: -8px;
+	right: -1px;
+}
+
+.todo-options ul {
+  display: inline-block;
+  *display: inline;
+  margin-bottom: 0;
+  margin-left: 0;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  *zoom: 1;
+
+}
+
+.todo-options ul > li {
+  display: inline;
+}
+
+.todo-options ul > li > a,
+.todo-options ul > li > span {
+  float: left;
+  padding: 1px 12px;
+  line-height: 14px;
+  text-decoration: none;
+  background-color: #fff;
+  color: #000; /* Set link color for the todo-options here*/
+  border: 1px solid #fff200;
+  border-left-width: 0;
+}
+
+.todo-options ul > li > a:hover,
+.todo-options ul > li > a:focus,
+.todo-options ul > .active > a,
+.todo-options ul > .active > span {
+  background-color: #fffcd2;
+}
+
+.todo-options ul > li:first-child > a,
+.todo-options ul > li:first-child > span {
+  border-left-width: 1px;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+          border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+
+.todo-options ul > li:last-child > a,
+.todo-options ul > li:last-child > span {
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+
+/* STYLES FOR THE FOOTER */
+
+footer.main-footer {
+	background-color: #000; 
+	width: 100%;
+	margin-top: 0px;
+}
+
