@@ -76,21 +76,21 @@ def createnewuserview (request):
         output = "username is taken, you can recover your account from the menu above..."
         return HttpResponse(output)
     else:
-    	#create the user
+        #create the user
         new_user = User.objects.create_user(username=username, password=password, email=username)
         new_user.save()
         #log the user in
         user = authenticate(username=username, password=password)
-		if user is not None:
-		    if user.is_active:
-		        login(request, user)
-		        return redirect(frontpageview)
-		    else:
-		    		#This shouldn't happen when you just created the user... Account is disabled..
-		        return redirect(frontpageview)
-		else:
-		        #This shouldn't happen when you just created the user... Password or username is incorrect.
-		    return redirect(frontpageview)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect(frontpageview)
+            else:
+                    #This shouldn't happen when you just created the user... Account is disabled..
+                return redirect(frontpageview)
+        else:
+                #This shouldn't happen when you just created the user... Password or username is incorrect.
+            return redirect(frontpageview)
 
 def edituserview (request):
     output = "hello world"

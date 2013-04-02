@@ -86,10 +86,10 @@ def createnewuserview (request):
 		        login(request, user)
 		        return redirect(frontpageview)
 		    else:
+		    		#This shouldn't happen when you just created the user... Account is disabled..
 		        return redirect(frontpageview)
 		else:
-		        #Should probably add a link to reset password in case it's forgotten here at some point
-		    return redirect(frontpageview)
+		        #This shouldn't happen when you just created the user... Password or username is incorrect.
 		    return redirect(frontpageview)
 
 def edituserview (request):
