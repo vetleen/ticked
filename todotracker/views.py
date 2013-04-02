@@ -91,7 +91,7 @@ def createnewuserview (request):
         else:
                 #This shouldn't happen when you just created the user... Password or username is incorrect.
             return redirect(frontpageview)
-
+@login_required
 def edituserview (request):
     if request.POST['email']:
         email=request.POST['email']
