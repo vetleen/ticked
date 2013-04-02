@@ -71,12 +71,12 @@ def createnewuserview (request):
     password = request.POST['password']
     existing_user = User.objects.get(username=username)
     if existing_user is not None:
-		output = "username is taken, you can recover your account from the menu above..."
-		return HttpResponse(output)
-	else:
-		new_user = User.objects.create_user(username=username, password=password, email=username)
-		new_user.save()
-		return redirect(frontpageview)
+        output = "username is taken, you can recover your account from the menu above..."
+        return HttpResponse(output)
+    else:
+        new_user = User.objects.create_user(username=username, password=password, email=username)
+        new_user.save()
+        return redirect(frontpageview)
 
 def edituserview (request):
     output = "hello world"

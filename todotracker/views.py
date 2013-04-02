@@ -69,7 +69,7 @@ def logoutview (request):
 def createnewuserview (request):
     username = request.POST['email']
     password = request.POST['password']
-    existing_user = User.objects.get(username=username)
+    try existing_user = User.objects.get(username=username)
     if existing_user is not None:
         output = "username is taken, you can recover your account from the menu above..."
         return HttpResponse(output)
