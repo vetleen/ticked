@@ -68,10 +68,10 @@ def logoutview (request):
 
 def createnewuserview (request):
     def username_present(username):
-    if User.objects.filter(username=username).count():
-        return True
-    else:
-        return False
+		if User.objects.filter(username=username).count():
+		    return True
+		else:
+		    return False
     username = request.POST['email']
     password = request.POST['password']
     if username_present(username):

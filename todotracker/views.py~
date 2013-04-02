@@ -74,7 +74,6 @@ def createnewuserview (request):
         return False
     username = request.POST['email']
     password = request.POST['password']
-    
     if username_present(username):
         output = "username is taken, you can recover your account from the menu above..."
         return HttpResponse(output)
