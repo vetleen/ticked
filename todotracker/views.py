@@ -67,9 +67,14 @@ def logoutview (request):
     return redirect(frontpageview)
 
 def createnewuserview (request):
+    def username_present(username):
+    if User.objects.filter(username=username).count():
+        return True
+    else:
+        return False
     username = request.POST['email']
     password = request.POST['password']
-    if User.objects.get(username=username) is not None:
+    if username_present(username):
         output = "username is taken, you can recover your account from the menu above..."
         return HttpResponse(output)
     else:
