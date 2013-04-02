@@ -25,7 +25,6 @@ urlpatterns = patterns('',
     #### USER MANAGEMENT ####    
     url(r'^user/login/$', 'todotracker.views.loginview', name='loginview'),
     url(r'^user/logout/$', 'todotracker.views.logoutview', name='logoutview'),
-    url(r'^user/new/$', 'todotracker.views.setupnewuserview', name='setupnewuserview'),
     url(r'^user/create/$', 'todotracker.views.createnewuserview', name='createnewuserview'),
     url(r'^user/edit/$', 'todotracker.views.edituserview', name='edituserview'),
     url(r'^user/delete/$', 'todotracker.views.deleteuserview', name='deleteuserview'),

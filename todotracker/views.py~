@@ -63,16 +63,18 @@ def loginview (request):
         return redirect(frontpageview)
 
 def logoutview (request):
-    output = "hello world"
-    return HttpResponse(output)
-
-def setupnewuserview (request):
-    output = "hello world"
-    return HttpResponse(output)
+    logout(request)
+    return redirect(frontpageview)
 
 def createnewuserview (request):
-    output = "hello world"
-    return HttpResponse(output)
+    username = request.POST['email']
+    password = request.POST['password']
+    existing_user = User.objects.get(username=username)
+    if existing_user is not None:
+		output = "username is taken, you can recover your account from the menu above..."
+		return HttpResponse(output)
+	else:
+		new_user = User.objects.create_user(username=username, password=password, email=username)
 
 def edituserview (request):
     output = "hello world"

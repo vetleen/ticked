@@ -46,19 +46,23 @@
                       <li><a href="#">Log out</a></li>
                     </ul>
             	  </li>
-                </ul>                
-{% if user.is_authenticated %}
-                <div id="login" class="pull-right light-text">
-                  <p id="logged-in-notice">Your are logged in as {{ user.username }} | <a href="/user/logout/" class="loginout-link"> log out</a></p>
-                </div>
-{% else %}                
+                </ul>{% if user.is_authenticated %}
+                <div id="login" class="pull-right">
+                  <ul class="nav">
+                    <li class="active">
+                      <a>Your are logged in as {{ user.username }}</a>
+                    </li>
+                <form method="post" action="/user/logout/" id="logout-form"  class="form-inline pull-right lower-height-input-form" >{% csrf_token %}                    
+        	      <input type="submit" value="Log out" class="btn btn-small btn-primary" href="#" />
+      	        </form>
+                  </ul>
+                </div>{% else %}                
                 <form method="post" action="/user/login/" id="login-form"  class="form-inline pull-right lower-height-input-form" >{% csrf_token %}
         	      <input type="email" class="span2 lower-height-input-form" id="username" name="username" placeholder="E-mail" required />
         	      <input type="password" class="span2 lower-height-input-form" id="password" name="password" placeholder="Password" required />
         	      <input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary btn-small" />
         	      <input type="button" value="New user" class="btn btn-small" href="#newUserModal" data-toggle="modal" />
-{% endif %}        	      
-      	      </form>      	    
+      	        </form>{% endif %}        	      
             </div><!-- / span -->
           </div><!-- / row -->
         </div><!-- / container --> 
@@ -90,7 +94,7 @@
         <h3 id="addTodoModalLabel">New todo</h3>
       </header>
       <div class="modal-body offset1">
-        <form method="post" action="/addtodo/" id="new-todo-form" class="todoform"><!--{% csrf_token %}-->
+        <form method="post" action="/addtodo/" id="new-todo-form" class="todoform">{% csrf_token %}
           <fieldset>
             <textarea id="headline" class="span3" name="headline" placeholder="Enter a headline for your Todo..." maxlength="50" rows="2" /></textarea>
           </fieldset>
@@ -112,7 +116,7 @@
         <h3 id="newUserModalLabel">Create an account</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/newuser/" id="new-user-form" class="form-horizontal"><!--{% csrf_token %}-->
+        <form method="post" action="/user/create/" id="new-user-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
@@ -141,7 +145,7 @@
         <h3 id="newUserModalLabel">Edit your profile</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/edituser/" id="edit-user-form" class="form-horizontal"><!--{% csrf_token %}-->
+        <form method="post" action="/edituser/" id="edit-user-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
@@ -175,7 +179,7 @@
         <h3 id="changePasswordModalLabel">Change password</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal"><!--{% csrf_token %}-->
+        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="old_password">Old password</label>
             <div class="controls">

@@ -2,6 +2,12 @@ html, body {
 height: 100%;
 }
 
+.light-text{
+	color: #ffffff;
+}
+.add-top-margin-10px{
+	margin-top: 10px;
+}
 /* STYLES FOR THE NAV */
 .lower-height-input-form input[type="password"], .lower-height-input-form input[type="email"] {
 	font-size: 12px;
@@ -14,9 +20,7 @@ height: 100%;
 	margin-top: 5px;
 }
 
-.light-text{
-	color: #ffffff;
-}
+
 /* CONTENT */
 .content {
 	margin-top: 70px;
