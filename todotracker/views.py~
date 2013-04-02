@@ -75,6 +75,8 @@ def createnewuserview (request):
 		return HttpResponse(output)
 	else:
 		new_user = User.objects.create_user(username=username, password=password, email=username)
+		new_user.save()
+		return redirect(frontpageview)
 
 def edituserview (request):
     output = "hello world"
