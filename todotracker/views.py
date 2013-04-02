@@ -93,8 +93,18 @@ def createnewuserview (request):
             return redirect(frontpageview)
 
 def edituserview (request):
-    output = "hello world"
-    return HttpResponse(output)
+    if request.POST['email']:
+        email=request.POST['email']
+        request.user.email = email
+        request.user.username = email
+    if request.POST['first_name']:
+        first_name=request.POST['first_name']
+        request.user.first_name = first_name
+    if request.POST['last_name']:
+        last_name=request.POST['last_name']
+        request.user.last_name = last_name
+    request.user.save()
+    return redirect(frontpageview)
 
 def deleteuserview (request):
     output = "hello world"

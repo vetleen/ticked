@@ -145,23 +145,23 @@
         <h3 id="newUserModalLabel">Edit your profile</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/edituser/" id="edit-user-form" class="form-horizontal">{% csrf_token %}
+        <form method="post" action="/user/edit/" id="edit-user-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
-              <input type="email" id="email" placeholder="E-mail">
+              <input type="email" id="email" name="email" placeholder="E-mail">
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for="first_name">First name</label>
             <div class="controls">
-              <input type="text" id="first_name" placeholder="First name">
+              <input type="text" id="first_name"  name="first_name" placeholder="First name">
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for="last_name">Last name</label>
             <div class="controls">
-              <input type="text" id="last_name" placeholder="Last name">
+              <input type="text" id="last_name"  name="last_name" placeholder="Last name">
             </div>
           </div>
       </div>
