@@ -67,20 +67,30 @@ def logoutview (request):
     return redirect(frontpageview)
 
 def createnewuserview (request):
-    def username_present(username):
-    if User.objects.filter(username=username).count():
-        return True
-    else:
-        return False
     username = request.POST['email']
     password = request.POST['password']
-    if username_present(username):
+    if User.objects.filter(username=username).count():
+        output = "username is taken, you can recover your account from the menu above..."
+        return HttpResponse(output)
+    elif User.objects.filter(email=username).count():
         output = "username is taken, you can recover your account from the menu above..."
         return HttpResponse(output)
     else:
+    	#create the user
         new_user = User.objects.create_user(username=username, password=password, email=username)
         new_user.save()
-        return redirect(frontpageview)
+        #log the user in
+        user = authenticate(username=username, password=password)
+		if user is not None:
+		    if user.is_active:
+		        login(request, user)
+		        return redirect(frontpageview)
+		    else:
+		        return redirect(frontpageview)
+		else:
+		        #Should probably add a link to reset password in case it's forgotten here at some point
+		    return redirect(frontpageview)
+		    return redirect(frontpageview)
 
 def edituserview (request):
     output = "hello world"
