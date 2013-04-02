@@ -94,7 +94,7 @@
         <h3 id="addTodoModalLabel">New todo</h3>
       </header>
       <div class="modal-body offset1">
-        <form method="post" action="/addtodo/" id="new-todo-form" class="todoform"><!--{% csrf_token %}-->
+        <form method="post" action="/addtodo/" id="new-todo-form" class="todoform">{% csrf_token %}
           <fieldset>
             <textarea id="headline" class="span3" name="headline" placeholder="Enter a headline for your Todo..." maxlength="50" rows="2" /></textarea>
           </fieldset>
@@ -116,7 +116,7 @@
         <h3 id="newUserModalLabel">Create an account</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/user/create/" id="new-user-form" class="form-horizontal"><!--{% csrf_token %}-->
+        <form method="post" action="/user/create/" id="new-user-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
@@ -145,7 +145,7 @@
         <h3 id="newUserModalLabel">Edit your profile</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/edituser/" id="edit-user-form" class="form-horizontal"><!--{% csrf_token %}-->
+        <form method="post" action="/edituser/" id="edit-user-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
@@ -179,7 +179,7 @@
         <h3 id="changePasswordModalLabel">Change password</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal"><!--{% csrf_token %}-->
+        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="old_password">Old password</label>
             <div class="controls">
