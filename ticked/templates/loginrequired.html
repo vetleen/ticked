@@ -11,12 +11,26 @@
         </div><!-- / error alert -->
 	  </div><!-- / row -->  
       <div class="row"><!-- row -->
-        <div class="span12">
+        <section class="span12">
           <form method="post" action="/user/login/" id="login-form"  class="form-horizontal" >{% csrf_token %}
-        	<input type="email" class="span2" id="username" name="username" placeholder="E-mail" required />
-        	<input type="password" class="span2" id="password" name="password" placeholder="Password" required />
-        	<input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary" />
-        	<input type="button" value="New user" class="btn" href="#newUserModal" data-toggle="modal" />
+            <div class="control-group">
+              <label class="control-label" for="username">E-mail</label>
+              <div class="controls">
+        	    <input type="email" class="span2" id="username" name="username" placeholder="E-mail" required />
+        	  </div>
+        	</div>
+            <div class="control-group">
+              <label class="control-label" for="password">Password</label>
+              <div class="controls">
+        	    <input type="password" class="span2" id="password" name="password" placeholder="Password" required />
+        	  </div>
+        	</div>        	
+            <div class="control-group">
+              <div class="controls"> 	
+                <input type="submit" value="&nbsp;&nbsp;Login&nbsp;&nbsp;" class="btn btn-primary" />
+        	    <input type="button" value="New user" class="btn" href="#newUserModal" data-toggle="modal" />
+        	  </div>
+        	</div>
       	  </form>
-        </div>
+        </section>
 	  </div><!-- / row -->{% endblock content %}
