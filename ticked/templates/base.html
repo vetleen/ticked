@@ -179,23 +179,23 @@
         <h3 id="changePasswordModalLabel">Change password</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal">{% csrf_token %}
+        <form method="post" action="/user/changepassword/" id="change-password-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="old_password">Old password</label>
             <div class="controls">
-              <input type="password" id="old_password" placeholder="Password">
+              <input type="password" name="old_password" id="old_password" placeholder="Password">
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for="new_password">New password</label>
             <div class="controls">
-              <input type="password" id="new_password" placeholder="New Password">
+              <input type="password" name="new_password" id="new_password" placeholder="New Password">
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for="repeat_new_password">Repeat new password</label>
             <div class="controls">
-              <input type="password" id="repeat_new_password" placeholder="New Password">
+              <input type="password" name="repeat_new_password" id="repeat_new_password" placeholder="New Password">
             </div>
           </div>
       </div>

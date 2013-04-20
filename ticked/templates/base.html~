@@ -155,13 +155,13 @@
           <div class="control-group">
             <label class="control-label" for="first_name">First name</label>
             <div class="controls">
-              <input type="text" id="first_name" placeholder="First name">
+              <input type="text" id="first_name"  name="first_name" placeholder="First name">
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for="last_name">Last name</label>
             <div class="controls">
-              <input type="text" id="last_name" placeholder="Last name">
+              <input type="text" id="last_name"  name="last_name" placeholder="Last name">
             </div>
           </div>
       </div>
@@ -179,7 +179,7 @@
         <h3 id="changePasswordModalLabel">Change password</h3>
       </header>
       <div class="modal-body">
-        <form method="post" action="/account/changepassword/" id="change-password-form" class="form-horizontal">{% csrf_token %}
+        <form method="post" action="/user/changepassword/" id="change-password-form" class="form-horizontal">{% csrf_token %}
           <div class="control-group">
             <label class="control-label" for="old_password">Old password</label>
             <div class="controls">
