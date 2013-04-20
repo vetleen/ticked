@@ -127,8 +127,10 @@ def changepasswordview(request):
     if request.user.check_password(old_password):
         if new_password1 == new_password2:
             request.user.set_password(new_password1)
+            output = "Password should be reset: old_password: %s, new_password1: %s, new_password2: %s" % (old_password, new_password1, new_password2)
+            return HttpResponse(output)
             #You should probably add a success-message here..
-            return redirect(frontpageview)
+            #return redirect(frontpageview)
         else:
             output = "Good thing you had to type the password twice, because the two times you typed the new password you typed them differently. Please go back and try again."
             return HttpResponse(output)
