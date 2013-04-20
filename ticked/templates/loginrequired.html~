@@ -1,0 +1,17 @@
+{% extends "base.html" %}  
+{% block content %}
+      <div class="row"><!-- row -->
+        <div class="span6 offset3"><!-- error alert -->
+          <article class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h5>You must be logged in.</h5>
+            In order to do that you must first log in.<br>
+            Please use the form below.
+          </article>
+        </div><!-- / error alert -->
+	  </div><!-- / row -->  
+      <div class="row"><!-- row -->
+        <div class="span12">
+          Login-form
+        </div>
+	  </div><!-- / row -->{% endblock content %}

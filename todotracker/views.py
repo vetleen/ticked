@@ -91,7 +91,8 @@ def createnewuserview (request):
         else:
                 #This shouldn't happen when you just created the user... Password or username is incorrect.
             return redirect(frontpageview)
-@login_required(login_url='/frontpage/')
+
+@login_required(login_url='/user/loginrequired/')
 def edituserview (request):
     if request.POST['email']:
         email=request.POST['email']
@@ -109,3 +110,10 @@ def edituserview (request):
 def deleteuserview (request):
     output = "hello world"
     return HttpResponse(output)
+    
+def loginrequiredview (request, message=None):
+    c = {}
+    c.update(csrf(request))
+    template = "loginrequired.html"
+    return render_to_response(template, c, context_instance=RequestContext(request))
+
