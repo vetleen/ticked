@@ -124,9 +124,9 @@ def changepasswordview(request):
     old_password = request.POST['old_password']
     new_password1 = request.POST['new_password']
     new_password2 = request.POST['repeat_new_password']
-    if check_password(old_password):
+    if request.user.check_password(old_password):
         if new_password1 == new_password2:
-            set_password(new_password1)
+            request.user.set_password(new_password1)
             #You should probably add a success-message here..
             return redirect(frontpageview)
         else:
