@@ -31,8 +31,8 @@
                   <li class="dropdown">
         	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Todos<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">View todos</a></li>
-                      <li><a href="#">View ticked todos</a></li>
+                      <li><a href="/todos/view/">View todos</a></li>
+                      <li><a href="/todos/view/ticked/">View ticked todos</a></li>
                       <li class="divider"></li>
                       <li><a href="#addTodoModal" data-toggle="modal">New todo</a></li>
                     </ul>
@@ -94,7 +94,7 @@
         <h3 id="addTodoModalLabel">New todo</h3>
       </header>
       <div class="modal-body offset1">
-        <form method="post" action="/addtodo/" id="new-todo-form" class="todoform">{% csrf_token %}
+        <form method="post" action="/todos/add/" id="new-todo-form" class="todoform">{% csrf_token %}
           <fieldset>
             <textarea id="headline" class="span3" name="headline" placeholder="Enter a headline for your Todo..." maxlength="50" rows="2" /></textarea>
           </fieldset>

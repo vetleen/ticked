@@ -12,8 +12,6 @@ class Todo(models.Model):
 	
 	### These are unused now, but the idea is to implement this at a later stage ###
 	
-	#color_code is meant to be used to allow users to color code their todos
-	color_code = models.CharField(max_length=50, blank=True)
 	#deadline will be the date the user himself sets as the deadline
 	deadline = models.DateTimeField(default=datetime.now)
 	#viewers are the other users who are allowed to view the todo
