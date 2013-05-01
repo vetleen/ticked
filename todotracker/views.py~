@@ -40,9 +40,9 @@ def viewtodosview (request, pgnumb=1, message=None):
     todos_to_show = users_unticked_todos[start_point:stop_point]
     
     #count possible pages
-    if total_todos_selected <= 1:
+    if total_todos_selected <= 1: #avoid dividing by zero
         pgcount = 1
-    elif total_todos_selected > 1:
+    elif total_todos_selected > 1: #sets pgcount to the number of pages of 16 todos needed to get through all todos...
         pgcount = (total_todos_selected-1/todos_per_page)+1
     
     #serve content

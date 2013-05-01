@@ -1,19 +1,31 @@
 {% extends "base.html" %}  
-{% block content %}  
+{% block content %}
+<script>  
+$(document).ready(function(){
+    $('#pg_1').addClass('disabled');
+});
+</script>
+
       <div class="row"><!-- row -->
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-              <li class="disabled"><a href="#">Prev</a></li>
-              <li class="disabled"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">Next</a></li>
+              <li id="pg_prev"><a href="#">Prev</a></li>
+              <li id="pg_1"><a href="#">1</a></li>
+              <li id="pg_2"><a href="#">2</a></li>
+              <li id="pg_3"><a href="#">3</a></li>
+              <li id="pg_4"><a href="#">4</a></li>
+              <li id="pg_5"><a href="#">5</a></li>
+              <li id="pg_next"><a href="#">Next</a></li>
             </ul>
           </nav>
         </div><!-- / pagination -->
+        
+        
+        
+        
+        
+        
 	  </div><!-- / row -->
       <section  id="todos-section" class="row"><!-- row -->
         {% for todo in todos %}
