@@ -19,7 +19,7 @@ class Todo(models.Model):
 	#color_code is meant to be used to allow users to color code their todos
 	color_code = models.CharField(max_length=50, blank=True)
 	#deadline will be the date the user himself sets as the deadline
-	deadline = models.DateTimeField(default=datetime.utcnow.replace(tzinfo=utc))
+	deadline = models.DateTimeField(default=datetime.utcnow)
 	
 
 

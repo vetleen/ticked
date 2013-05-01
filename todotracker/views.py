@@ -21,18 +21,25 @@ def frontpageview (request, message=None):
 #### TODO MANAGEMENT ####
 @login_required(login_url='/user/loginrequired/')
 def viewtodosview (request, pgnumb=1, message=None):
+    #set up
     pgnumb=int(pgnumb)
+    todos_per_page=16
     
-    #Find all the users unticked todos ## this may be used to model this elegantly: newUserAv = Avatar.objects.filter(valid=True).order_by("date")[:3]
+    #Find all the users unticked todos 
     users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created")
-
-    c = {}
+    
+    #pickout the todois the user will need
+    todos_to_show = users_unticked_todos##add something like [0:(todos_per_page-1)]
+    
+    #serve content
+    c = {'todos': todos_to_show}
     c.update(csrf(request))
     template = "view_todos.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
 
 @login_required(login_url='/user/loginrequired/')
 def addtodoview (request):
+    #remember to set date with: datetime.utcnow().replace(tzinfo=utc)
     output = "hello world"
     return HttpResponse(output)
 

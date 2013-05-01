@@ -16,81 +16,55 @@
         </div><!-- / pagination -->
 	  </div><!-- / row -->
       <section  id="todos-section" class="row"><!-- row -->
+      
+      
+      
+        {% for todo in todos %}
         <!-- todo -->
         <div class="span3">
           <article class="todo">
-	        <h4>Husk navnet ditt...</h4>
-	        Husker du det?<br><br> husker du det??
+	        <h4>{{ todo.head_line|truncatechars:50 }}</h4>
+	        {{ todo.body_text|truncatechars:300 }}
 			<nav class="todo-options">
 			  <ul>
-			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
-  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
-			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			    <li><a href="/todos/delete/{{ todo.id }}/" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="/todos/edit/{{ todo.id }}/" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="/todos/tick/{{ todo.id }}/" title="Click to mark this TODO as done">Tick!</a></li>
 			  </ul>
 			</nav>
           </article>
         </div>
         <!-- / todo -->
-        <!-- todo -->
-        <div class="span3">
-          <article class="todo">
-	        <h4>Husk navnet ditt...</h4>
-	        Husker du det?<br><br> husker du det??
+        {% empty%}
+        <div class="span6 offset3"><!-- info alert -->
+          <article class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h5>No todos found</h5>
+            You currently have no todos. You may add one from the menu above!
+          </article>
+        </div><!-- / info alert -->        
+        {% endfor %}        
+
+
+		{% for TODOs in TODOs %}
+		  <article class="todo">
+			<h1>{{ TODOs.headLine|truncatechars:50 }}</h1>
+			<p>{{ TODOs.bodyText|truncatechars:300|urlize|linebreaksbr  }}</p>
 			<nav class="todo-options">
 			  <ul>
-			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
-  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
-			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			    <li><a href="/deletetodo/{{ TODOs.id }}/" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="/edittodo/{{ TODOs.id }}/" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="/ticktodo/{{ TODOs.id }}/" title="Click to mark this TODO as done">Tick!</a></li>
 			  </ul>
 			</nav>
-          </article>
-        </div>
-        <!-- / todo -->
-        <!-- todo -->
-        <div class="span3">
-          <article class="todo">
-	        <h4>Husk navnet ditt...</h4>
-	        Husker du det?<br><br> husker du det??
-			<nav class="todo-options">
-			  <ul>
-			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
-  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
-			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
-			  </ul>
-			</nav>
-          </article>
-        </div>
-        <!-- / todo -->
-        <!-- todo -->
-        <div class="span3">
-          <article class="todo">
-	        <h4>Husk navnet ditt...</h4>
-	        Husker du det?<br><br> husker du det??
-			<nav class="todo-options">
-			  <ul>
-			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
-  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
-			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
-			  </ul>
-			</nav>
-          </article>
-        </div>
-        <!-- / todo -->
-        <!-- todo -->
-        <div class="span3">
-          <article class="todo">
-	        <h4>Husk navnet ditt...</h4>
-	        Husker du det?<br><br> husker du det??
-			<nav class="todo-options">
-			  <ul>
-			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
-  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
-			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
-			  </ul>
-			</nav>
-          </article>
-        </div>
-        <!-- / todo -->
+		  </article>
+		{% empty %}
+		<p> There's doesn't seem to be anything here...</p>
+		{% endfor %}
+
+        
+        
+        
       </section><!-- / row todos -->
       <div class="row"><!-- row -->
         <div class="span12"><!-- pagination -->
