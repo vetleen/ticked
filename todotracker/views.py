@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 def frontpageview (request, message=None):
     c = {}
     c.update(csrf(request))
-    template = "view_todos.html"
+    template = "frontpage.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
 
 
@@ -22,7 +22,7 @@ def frontpageview (request, message=None):
 def viewtodosview (request, pgnumb=1, message=None):
     c = {}
     c.update(csrf(request))
-    template = "frontpage.html"
+    template = "view_todos.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
 
 @login_required(login_url='/user/loginrequired/')
