@@ -33,7 +33,7 @@ def viewtodosview (request, pgnumb=1, message=None):
     
     #pickout the todos the user will need
     start_point = (pgnumb*todos_per_page)-todos_per_page
-    stop_point = (pgnumb*todos_per_page)-1
+    stop_point = (pgnumb*todos_per_page)
     if users_unticked_todos.count() < stop_point:
         stop_point = users_unticked_todos.count()
     todos_to_show = users_unticked_todos[start_point:stop_point]
