@@ -78,8 +78,10 @@ def viewtickedtodoview (request):
 
 @login_required(login_url='/user/loginrequired/')
 def deletetodoview (request, todoid):
-    output = "hello world"
-    return HttpResponse(output)
+    todo_to_delete = Todo.objects.get(id=todoid)
+    if todo_to_delete.owner == request.user:
+        todo_to_delete.delete()
+        return redirect(viewtodosview) #add success message
 
 @login_required(login_url='/user/loginrequired/')
 def edittodoview (request, todoid):
