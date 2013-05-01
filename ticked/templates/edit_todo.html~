@@ -17,7 +17,7 @@
           </fieldset>
       </div>
       <footer>
-          <input type="submit" class="btn btn-primary">Update</button>
+          <input type="submit" class="btn btn-primary" value="Update">
         </form>
       </footer>
     </article> 

@@ -99,12 +99,10 @@ def edittodoview (request, todoid):
 def updatetodoview (request, todoid):
     todo_to_update = Todo.objects.get(id=todoid)
     if todo_to_update.owner == request.user:
-        if request.POST['headline']:
-            headline=request.POST['headline']
-            todo_to_update.headline = headline
-        if request.POST['bodytext']:
-            bodytext=request.POST['bodytext']
-            todo_to_update.bodytext = bodytext
+        headline=request.POST['headline']
+        todo_to_update.headline = headline
+        bodytext=request.POST['bodytext']
+        todo_to_update.bodytext = bodytext
         todo_to_update.save()
         return redirect(viewtodosview) #add success message
     else:

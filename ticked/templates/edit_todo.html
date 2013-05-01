@@ -10,14 +10,14 @@
       <div class="offset1">
         <form method="post" action="/todos/update/{{ todo.id }}/" id="edit-todo-form" class="todoform">{% csrf_token %}
           <fieldset>
-            <textarea id="headline" class="span3" name="headline" placeholder="{{  todo.headline  }}" maxlength="50" rows="2" /></textarea>
+            <textarea id="headline" class="span3" name="headline" placeholder="Add a headline to you todo" maxlength="50" rows="2" />{{  todo.headline  }}</textarea>
           </fieldset>
           <fieldset>
-            <textarea id="bodytext" class="span3" name="bodytext" maxlength="300" rows="10" placeholder="{{  todo.bodytext  }}" /></textarea>
+            <textarea id="bodytext" class="span3" name="bodytext" maxlength="300" rows="10" placeholder="Add a more details to you todo..." />{{  todo.bodytext  }}</textarea>
           </fieldset>
       </div>
       <footer>
-          <input type="submit" class="btn btn-primary">Update</button>
+          <input type="submit" class="btn btn-primary" value="Update">
         </form>
       </footer>
     </article> 
