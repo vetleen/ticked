@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Todo(models.Model):
-	head_line = models.CharField(max_length=50, blank=True)
-	body_text = models.CharField(max_length=300, blank=True)
+	headline = models.CharField(max_length=50, blank=True)
+	bodytext = models.CharField(max_length=300, blank=True)
 	owner = models.ForeignKey(User)
 	todo_is_ticked = models.BooleanField(default=False)
 	date_created = models.DateTimeField(default=datetime.utcnow().replace(tzinfo=utc))
