@@ -14,13 +14,13 @@ urlpatterns = patterns('',
 
     #### TODO MANAGEMENT ####
     url(r'^todos/view/$', 'todotracker.views.viewtodosview', name='viewtodosview'),
-    url(r'^todos/view/(\d*)/$', 'todotracker.views.viewtodosview', name='viewspecifictodo'),
+    url(r'^todos/view/(?P<todoid>\d*)/$', 'todotracker.views.viewtodosview', name='viewspecifictodo'),
     url(r'^todos/add/$', 'todotracker.views.addtodoview', name='addtodoview'),
-    url(r'^todos/tick/(\d*)/$', 'todotracker.views.ticktodoview', name='ticktodoview'),
+    url(r'^todos/tick/(?P<todoid>\d*)/$', 'todotracker.views.ticktodoview', name='ticktodoview'),
     url(r'^todos/untick/(?P<todoid>\d*)/$', 'todotracker.views.unticktodoview', name='unticktodoview'),
     url(r'^todos/view/ticked/$', 'todotracker.views.viewtickedtodoview', name='viewtickedtodo'),
-    url(r'^todos/delete/(\d*)/$', 'todotracker.views.deletetodoview', name='deletetodoview'),
-    url(r'^todos/edit/(\d*)/$', 'todotracker.views.edittodoview', name='edittodoview'),
+    url(r'^todos/delete/(?P<todoid>\d*)/$', 'todotracker.views.deletetodoview', name='deletetodoview'),
+    url(r'^todos/edit/(?P<todoid>\d*)/$', 'todotracker.views.edittodoview', name='edittodoview'),
 
     #### USER MANAGEMENT ####    
     url(r'^user/login/$', 'todotracker.views.loginview', name='loginview'),
