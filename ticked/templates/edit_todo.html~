@@ -1,0 +1,27 @@
+{% extends "base.html" %}  
+{% block content %}  
+      <div class="row"><!-- row -->
+        <div class="span12">
+        
+    <article id="editTodo">
+      <header class="modal-header">
+        <h3 id="addTodoModalLabel">Edit todo</h3>
+      </header>
+      <div class="offset1">
+        <form method="post" action="/todos/update/{{ todo.id }}/" id="edit-todo-form" class="todoform">{% csrf_token %}
+          <fieldset>
+            <textarea id="headline" class="span3" name="headline" placeholder="{{  todo.headline  }}" maxlength="50" rows="2" /></textarea>
+          </fieldset>
+          <fieldset>
+            <textarea id="bodytext" class="span3" name="bodytext" maxlength="300" rows="10" placeholder="{{  todo.bodytext  }}" /></textarea>
+          </fieldset>
+      </div>
+      <footer>
+          <input type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </footer>
+    </article> 
+        
+        
+        </div>
+	  </div><!-- / row -->{% endblock content %}

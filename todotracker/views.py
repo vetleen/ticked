@@ -85,9 +85,32 @@ def deletetodoview (request, todoid):
 
 @login_required(login_url='/user/loginrequired/')
 def edittodoview (request, todoid):
-    output = "hello world"
-    return HttpResponse(output)
+    todo_to_edit = Todo.objects.get(id=todoid)
+    if todo_to_edit.owner == request.user:
+        c = {'todo': todo_to_edit}
+        c.update(csrf(request))
+        template = "edit_todo.html"
+        return render_to_response(template, c, context_instance=RequestContext(request))
+    else:
+        output = "Ups, it seems we tried to serve you a todo that does not belong to you and had to abort, please go back and try again..."
+        return HttpResponse(output)
 
+@login_required(login_url='/user/loginrequired/')
+def updatetodoview (request, todoid):
+    todo_to_update = Todo.objects.get(id=todoid)
+    if todo_to_update.owner == request.user:
+        if request.POST['headline']:
+            headline=request.POST['headline']
+            todo_to_update.headline = headline
+        if request.POST['bodytext']:
+            bodytext=request.POST['bodytext']
+            todo_to_update.bodytext = bodytext
+        todo_to_update.save()
+        return redirect(viewtodosview) #add success message
+    else:
+        output = "Ups, it seems we tried to serve you a todo that does not belong to you and had to abort, please go back and try again..."
+        return HttpResponse(output)
+                
 #### USER MANAGEMENT ####
 def loginview (request):
         ## The redirects in this view should pass along a message, I have however been unable to find out how this is done except for adding it to the url ##
