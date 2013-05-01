@@ -50,8 +50,15 @@ def addtodoview (request):
 
 @login_required(login_url='/user/loginrequired/')
 def ticktodoview (request, todoid):
-    output = "hello world"
-    return HttpResponse(output)
+    todo_to_tick = Todo.objects.get(id=todoid)
+    if todo_to_tick.owner == request.user:
+        todo_to_tick.todo_is_ticked = True
+        todo_to_tick.save()
+        return redirect(viewtodosview) #add success message
+    else:
+        output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
+        return HttpResponse(output)
+    
 
 @login_required(login_url='/user/loginrequired/')
 def unticktodoview (request, todoid):
