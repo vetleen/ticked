@@ -12,6 +12,7 @@ class Todo(models.Model):
 	owner = models.ForeignKey(User)
 	todo_is_ticked = models.BooleanField(default=False)
 	date_created = models.DateTimeField(default=datetime.utcnow().replace(tzinfo=utc))
+	date_completed = models.DateTimeField(blank=True, null=True)
 	
 	
 	### These are unused now, but the idea is to implement this at a later stage ###
@@ -19,7 +20,7 @@ class Todo(models.Model):
 	#color_code is meant to be used to allow users to color code their todos
 	color_code = models.CharField(max_length=50, blank=True)
 	#deadline will be the date the user himself sets as the deadline
-	deadline = models.DateTimeField(blank=True)
+	deadline = models.DateTimeField(blank=True, null=True)
 	
 
 
