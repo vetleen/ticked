@@ -1,0 +1,112 @@
+{% extends "base.html" %}  
+{% block content %}  
+      <div class="row"><!-- row -->
+        <div class="span12"><!-- pagination -->
+          <nav class="pagination pagination-centered">
+            <ul>
+              <li class="disabled"><a href="#">Prev</a></li>
+              <li class="disabled"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div><!-- / pagination -->
+	  </div><!-- / row -->
+      <section  id="todos-section" class="row"><!-- row -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+        <!-- todo -->
+        <div class="span3">
+          <article class="todo">
+	        <h4>Husk navnet ditt...</h4>
+	        Husker du det?<br><br> husker du det??
+			<nav class="todo-options">
+			  <ul>
+			    <li><a href="#" title="Click to delete this TODO">Delete</a></li>
+  			    <li><a href="#" title="Click to edit this TODO">Edit</a></li>
+			    <li><a href="#" title="Click to mark this TODO as done">Tick!</a></li>
+			  </ul>
+			</nav>
+          </article>
+        </div>
+        <!-- / todo -->
+      </section><!-- / row todos -->
+      <div class="row"><!-- row -->
+        <div class="span12"><!-- pagination -->
+          <nav class="pagination pagination-centered">
+            <ul>
+              <li class="disabled"><a href="#">Prev</a></li>
+              <li class="disabled"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div><!-- / pagination -->
+	  </div><!-- / row -->
+      <div class="row"><!-- row -->
+
+	  </div><!-- / row -->{% endblock content %}

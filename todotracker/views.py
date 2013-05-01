@@ -8,6 +8,7 @@ from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
+from todotracker.models import Todo
 
 def frontpageview (request, message=None):
     c = {}
@@ -20,6 +21,11 @@ def frontpageview (request, message=None):
 #### TODO MANAGEMENT ####
 @login_required(login_url='/user/loginrequired/')
 def viewtodosview (request, pgnumb=1, message=None):
+    pgnumb=int(pgnumb)
+    
+    #Find all the users unticked todos ## this may be used to model this elegantly: newUserAv = Avatar.objects.filter(valid=True).order_by("date")[:3]
+    users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created")
+
     c = {}
     c.update(csrf(request))
     template = "view_todos.html"
