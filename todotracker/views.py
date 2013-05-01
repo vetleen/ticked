@@ -1,3 +1,6 @@
+from datetime import datetime  
+
+from django.utils.timezone import utc
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.shortcuts import render_to_response, redirect

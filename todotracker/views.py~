@@ -1,3 +1,6 @@
+from datetime import datetime  
+
+from django.utils.timezone import utc
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.shortcuts import render_to_response, redirect
@@ -43,7 +46,7 @@ def addtodoview (request):
     body_text = request.POST['bodytext']
     Todo.objects.create(head_line=head_line, body_text=body_text, owner=request.user, date_created=datetime.utcnow().replace(tzinfo=utc))
     
-    return redirect(frontpageview)
+    return redirect(viewtodosview)
 
 @login_required(login_url='/user/loginrequired/')
 def ticktodoview (request, todoid):
