@@ -33,13 +33,20 @@ def viewtodosview (request, pgnumb=1, message=None):
     
     #pickout the todos the user will need
     start_point = (pgnumb*todos_per_page)-todos_per_page
-    stop_point = (pgnumb*todos_per_page)-1
-    if users_unticked_todos.count() < stop_point:
-        stop_point = users_unticked_todos.count()
+    stop_point = (pgnumb*todos_per_page)
+    total_todos_selected = users_unticked_todos.count()
+    if total_todos_selected < stop_point:
+        stop_point = total_todos_selected
     todos_to_show = users_unticked_todos[start_point:stop_point]
     
+    #count possible pages
+    if total_todos_selected <= 1:
+        pgcount = 1
+    elif total_todos_selected > 1:
+        pgcount = (total_todos_selected-1/todos_per_page)+1
+    
     #serve content
-    c = {'todos': todos_to_show, 'pgnumb': pgnumb}
+    c = {'todos': todos_to_show, 'pgnumb': pgnumb, "pgcount": pgcount}
     c.update(csrf(request))
     template = "view_todos.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
