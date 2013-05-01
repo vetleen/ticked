@@ -31,11 +31,15 @@ def viewtodosview (request, pgnumb=1, message=None):
     #Find all the users unticked todos 
     users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created")
     
-    #pickout the todois the user will need
-    todos_to_show = users_unticked_todos##add something like [0:(todos_per_page-1)]
+    #pickout the todos the user will need
+    start_point = (pgnumb*todos_per_page)-todos_per_page
+    stop_point = (pgnumb*todos_per_page)-1
+    if users_unticked_todos.count() < stop_point:
+        stop_point = users_unticked_todos.count()
+    todos_to_show = users_unticked_todos[start_point:stop_point]
     
     #serve content
-    c = {'todos': todos_to_show}
+    c = {'todos': todos_to_show, 'pgnumb': pgnumb}
     c.update(csrf(request))
     template = "view_todos.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
