@@ -20,8 +20,8 @@
         <!-- todo -->
         <div class="span3">
           <article class="todo">
-	        <h4>{{ todo.head_line|truncatechars:50 }}</h4>
-	        {{ todo.body_text|truncatechars:300 }}
+	        <h4>{{ todo.headline|truncatechars:50 }}</h4>
+	        {{ todo.bodytext|truncatechars:300 }}
 			<nav class="todo-options">
 			  <ul>
 			    <li><a href="/todos/delete/{{ todo.id }}/" title="Click to delete this TODO">Delete</a></li>
