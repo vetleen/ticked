@@ -114,10 +114,10 @@ def edituserview (request):
     request.user.save()
     return redirect(frontpageview)
 
-@login_required(login_url='/user/loginrequired/')
-def deleteuserview (request):
-    output = "hello world"
-    return HttpResponse(output)
+##@login_required(login_url='/user/loginrequired/')
+##def deleteuserview (request):
+##    output = "hello world"
+##    return HttpResponse(output)
 
 @login_required(login_url='/user/loginrequired/')
 def changepasswordview(request):

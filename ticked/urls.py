@@ -28,7 +28,7 @@ urlpatterns = patterns('',
     url(r'^user/create/$', 'todotracker.views.createnewuserview', name='createnewuserview'),
     url(r'^user/edit/$', 'todotracker.views.edituserview', name='edituserview'),
     url(r'^user/changepassword/$', 'todotracker.views.changepasswordview', name='changepasswordview'),
-    url(r'^user/delete/$', 'todotracker.views.deleteuserview', name='deleteuserview'),
+##    url(r'^user/delete/$', 'todotracker.views.deleteuserview', name='deleteuserview'),
     url(r'^user/loginrequired/$', 'todotracker.views.loginrequiredview', name='loginrequiredview'),
 	#### STYLESHEETS ####
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': static }),
