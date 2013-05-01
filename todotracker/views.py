@@ -39,9 +39,11 @@ def viewtodosview (request, pgnumb=1, message=None):
 
 @login_required(login_url='/user/loginrequired/')
 def addtodoview (request):
-    #remember to set date with: datetime.utcnow().replace(tzinfo=utc)
-    output = "hello world"
-    return HttpResponse(output)
+    head_line = request.POST['headline']
+    body_text = request.POST['bodytext']
+    Todo.objects.create(head_line=head_line, body_text=body_text, owner=request.user, date_created=datetime.utcnow().replace(tzinfo=utc))
+    
+    return redirect(viewtodosview)
 
 @login_required(login_url='/user/loginrequired/')
 def ticktodoview (request, todoid):
