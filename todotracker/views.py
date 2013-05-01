@@ -20,8 +20,10 @@ def frontpageview (request, message=None):
 #### TODO MANAGEMENT ####
 @login_required(login_url='/user/loginrequired/')
 def viewtodosview (request, pgnumb=1, message=None):
-    output = "hello world"
-    return HttpResponse(output)
+    c = {}
+    c.update(csrf(request))
+    template = "frontpage.html"
+    return render_to_response(template, c, context_instance=RequestContext(request))
 
 @login_required(login_url='/user/loginrequired/')
 def addtodoview (request):
