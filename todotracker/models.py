@@ -20,11 +20,6 @@ class Todo(models.Model):
 	color_code = models.CharField(max_length=50, blank=True)
 	#deadline will be the date the user himself sets as the deadline
 	deadline = models.DateTimeField(default=datetime.now)
-	#viewers are the other users who are allowed to view the todo
-	#todo_viewers = models.ManyToManyField(User)
-	#todo_editors are the other users who are allowed to edit the todo
-	#todo_editors = models.ManyToManyField(User)
-	#todo_tickers are the other users who are allowed to tick the todo
-	#todo_tickers = models.ManyToManyField(User)
+	
 
 
