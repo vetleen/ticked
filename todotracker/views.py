@@ -49,9 +49,11 @@ def viewtodosview (request, pgnumb=1, message=None):
     def getPagination(currentPage, totalNumberOfPages): #Thank you Kim Joar Bekkelund for this: https://gist.github.com/kjbekkelund/5504010
         beforeOrAfter = 2
         if totalNumberOfPages < 5:
-            return range(1, totalNumberOfPages+1)
-        start = max(1, currentPage - beforeOrAfter)
-        stop = min(totalNumberOfPages, currentPage + beforeOrAfter)
+            start = 1
+            stop = totalNumberOfPages
+        else:
+            start = max(1, currentPage - beforeOrAfter)
+            stop = min(totalNumberOfPages, currentPage + beforeOrAfter)
         return range(start, stop + 1)
     pagi = getPagination(pgnumb, pgcount)
     
