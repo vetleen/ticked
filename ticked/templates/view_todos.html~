@@ -1,64 +1,26 @@
 {% extends "base.html" %}  
 {% block content %}
 
-<!-- Script for pagination -->
-<script>
-document.write("hello world");
-var current_page = {{  pgnumb  }}
-var possible_pages = {{  pgcount  }}
-
-if (possible_pages >= 5)
-    {
-    var first_pagination = current_page - 2
-    var second_pagination = current_page - 1
-    var third_pagination = current_page
-    var fourth_pagination = current_page + 1
-    var fifth_pagination = current_page + 2
-    }
-if (possible_pages == 4)
-    {
-    var first_pagination = current_page - 2
-    var second_pagination = current_page - 1
-    var third_pagination = current_page
-    var fourth_pagination = current_page + 1
-
-    }
-if (possible_pages == 3)
-    {
-    var first_pagination = current_page - 1
-    var second_pagination = current_page
-    var third_pagination = current_page +1
-    }
-if (possible_pages == 2)
-    {
-    var first_pagination = current_page
-    var second_pagination = current_page + 1
-    }
-</script>
-<!-- end script for pagination --> 
-
-
       <div class="row"><!-- row -->
 
+    
+        
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/1/">First</a></li>
-              <script>if (possible_pages==1){document.write('<li><a href="todos/view/1/" class="disabled">Viewing page 1 of 1</a></li>')}</script>
-              <script>if (possible_pages==2){document.write('<li><a href="todos/view/1/"') if(pgnumb==1){document.write('class=disabled')}document.write('>1</a></li><li><a href="todos/view/2/">2</a></li>')}</script>              
-              
-              <li><a href="#">na</a></li>
-              
-              
-              
-              
-              
-              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/{{  pgcount  }}/">Last</a></li>
+            {% for n, page in enumerate(pagination) %}
+             <li><a href="{{  pagination[n]  }}">{{  pagination  }}</a></li>
+            {% endfor %}  
+              <li class="disabled"><a href="#">Prev</a></li>
+              <li class="disabled"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
             </ul>
           </nav>
         </div><!-- / pagination -->        
-        
-        
         
         
         

@@ -8,6 +8,9 @@
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
+            {% for i, n in pagination %}
+             <li><a href="{{  n  }}">{{  i  }}</a></li>
+            {% endfor %}  
               <li class="disabled"><a href="#">Prev</a></li>
               <li class="disabled"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
