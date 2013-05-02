@@ -8,8 +8,8 @@
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-            {% for i, n in pagi %}
-             <li><a href="{{  n  }}">{{  i  }}</a></li>
+            {% for page in pagi %}
+             <li><a href="{{  page  }}">{{  page  }}</a></li>
             {% endfor %}  
               <li class="disabled"><a href="#">Prev</a></li>
               <li class="disabled"><a href="#">1</a></li>

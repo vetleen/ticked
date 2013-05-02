@@ -46,7 +46,7 @@ def viewtodosview (request, pgnumb=1, message=None):
         pgcount = ((total_todos_selected-1)/todos_per_page)+1
     
     #pagination
-    pagi = {'x': 1, 'y': 2}
+    pagi = [1, 2]
     
     #serve content
     c = {'todos': todos_to_show, 'pgnumb': pgnumb, 'pgcount': pgcount, 'pagi': pagi}
