@@ -46,7 +46,13 @@ def viewtodosview (request, pgnumb=1, message=None):
         pgcount = ((total_todos_selected-1)/todos_per_page)+1
     
     #pagination
-    pagi = [1, 2]
+    def getPagination(currentPage, totalNumberOfPages): #Thank you Kim Joar Bekkelund for this: https://gist.github.com/kjbekkelund/5504010
+       beforeOrAfter = 2
+       start = max(1, currentPage - beforeOrAfter)
+       stop = min(totalNumberOfPages, currentPage + beforeOrAfter)
+       return range(start, stop + 1)
+    pagi = getPagination(pgnumb, pgcount)
+    
     
     #serve content
     c = {'todos': todos_to_show, 'pgnumb': pgnumb, 'pgcount': pgcount, 'pagi': pagi}

@@ -1,32 +1,17 @@
 {% extends "base.html" %}  
 {% block content %}
-
       <div class="row"><!-- row -->
-
-    
-        
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-            {% for page in pagi %}
-             <li><a href="{{  page  }}">{{  page  }}</a></li>
-            {% endfor %}  
-              <li class="disabled"><a href="#">Prev</a></li>
-              <li class="disabled"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">Next</a></li>
+              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/1/">First</a></li>{% for page in pagi %}
+              <li{% if page == pgnumb %} class="disabled"{% endif %}><a href="/todos/view/{{  page  }}/">{{  page  }}</a></li>{% endfor %}
+              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/{{  pgcount  }}/">Last</a></li>
             </ul>
           </nav>
         </div><!-- / pagination -->        
-        
-        
-        
 	  </div><!-- / row -->
-      <section  id="todos-section" class="row"><!-- row -->
-        {% for todo in todos %}
+      <section  id="todos-section" class="row"><!-- row -->{% for todo in todos %}
         <!-- todo -->
         <div class="span3">
           <article class="todo">
@@ -56,16 +41,12 @@
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-              <li class="disabled"><a href="#">Prev</a></li>
-              <li class="disabled"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">Next</a></li>
+              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/1/">First</a></li>{% for page in pagi %}
+              <li{% if page == pgnumb %} class="disabled"{% endif %}><a href="/todos/view/{{  page  }}/">{{  page  }}</a></li>{% endfor %}
+              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/{{  pgcount  }}/">Last</a></li>
             </ul>
           </nav>
-        </div><!-- / pagination -->
+        </div><!-- / pagination -->  
 	  </div><!-- / row -->
       <div class="row"><!-- row -->
 
