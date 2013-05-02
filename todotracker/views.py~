@@ -46,10 +46,10 @@ def viewtodosview (request, pgnumb=1, message=None):
         pgcount = ((total_todos_selected-1)/todos_per_page)+1
     
     #pagination
-    pagination = {'pag1': '1', 'pag2': '2'}
+    pagi = {'pag1': '1', 'pag2': '2'}
     
     #serve content
-    c = {'todos': todos_to_show, 'pgnumb': pgnumb, 'pgcount': pgcount, 'pagination': pagination}
+    c = {'todos': todos_to_show, 'pgnumb': pgnumb, 'pgcount': pgcount, 'pagi': pagi}
     c.update(csrf(request))
     template = "view_todos.html"
     return render_to_response(template, c, context_instance=RequestContext(request))
