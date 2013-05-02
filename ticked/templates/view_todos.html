@@ -1,27 +1,23 @@
 {% extends "base.html" %}  
 {% block content %}
 
-
-   
-
-
       <div class="row"><!-- row -->
 
+    
+        
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/1/">First</a></li>
+              <li class="disabled"><a href="#">Prev</a></li>
               <li class="disabled"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li><a href="#">3</a></li>
               <li><a href="#">4</a></li>
               <li><a href="#">5</a></li>
-              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/{{  pgcount  }}">Last</a></li>
+              <li><a href="#">Next</a></li>
             </ul>
           </nav>
         </div><!-- / pagination -->        
-        
-        
         
         
         
