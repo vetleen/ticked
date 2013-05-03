@@ -1,18 +1,7 @@
 {% extends "base.html" %}  
 {% block content %}
-      <section id="front-page-display" class="row content"><!-- row -->
+      <section id="front-page-display" class="row"><!-- row -->
         <div class="span8 offset2">
-          <div class="step-1-2-3">
-            <h3>1. Make a todo</h3>
-            "Redo the front page thingy"
-          </div>
-          <div class="step-1-2-3">
-            <h3>2. Do it</h3>
-            "Yeah, yeah - soon"
-          </div>
-          <div class="step-1-2-3">
-            <h3>3. Tick it of</h3>
-            "That's gonna be nice!"
-          </div>
+          <button class="btn btn-main btn-large" >Sign up now!</button>
         </div>
       </section><!-- / row -->     {% endblock content %}

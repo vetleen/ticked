@@ -84,28 +84,33 @@ def addtodoview (request):
 
 @login_required(login_url='/user/loginrequired/')
 def ticktodoview (request, todoid):
-    todo_to_tick = Todo.objects.get(id=todoid)
-    if todo_to_tick.owner == request.user:
-        todo_to_tick.todo_is_ticked = True
-        todo_to_tick.date_completed = datetime.utcnow().replace(tzinfo=utc)
-        todo_to_tick.save()
-        return redirect(viewtodosview) #add success message
+    if Todo.objects.filter(id=todoid):
+        todo_to_tick = Todo.objects.get(id=todoid)
+        if todo_to_tick.owner == request.user:
+            todo_to_tick.todo_is_ticked = True
+            todo_to_tick.date_completed = datetime.utcnow().replace(tzinfo=utc)
+            todo_to_tick.save()
+            return redirect(viewtodosview) #add success message
+        else:
+            output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
+            return HttpResponse(output)
     else:
-        output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
-        return HttpResponse(output)
-    
+        return redirect(viewtodosview) #add failure message
 
 @login_required(login_url='/user/loginrequired/')
 def unticktodoview (request, todoid):
-    todo_to_untick = Todo.objects.get(id=todoid)
-    if todo_to_untick.owner == request.user:
-        todo_to_untick.todo_is_ticked = False
-        todo_to_untick.save()
-        return redirect(viewtickedtodoview) #add success message
+    if Todo.objects.filter(id=todoid):
+        todo_to_untick = Todo.objects.get(id=todoid)
+        if todo_to_untick.owner == request.user:
+            todo_to_untick.todo_is_ticked = False
+            todo_to_untick.save()
+            return redirect(viewtickedtodoview) #add success message
+        else:
+            output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
+            return HttpResponse(output)
     else:
-        output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
-        return HttpResponse(output)
-
+        return redirect(viewtodosview) #add failure message
+        
 @login_required(login_url='/user/loginrequired/')
 def viewtickedtodoview (request, pgnumb=1, message=None):
     #set up
@@ -160,7 +165,7 @@ def viewtickedtodoview (request, pgnumb=1, message=None):
 
 @login_required(login_url='/user/loginrequired/')
 def deletetodoview (request, todoid):
-    if Todo.objects.filter(id=todoid):
+    if Todo.objects.filter(id=todoid): #only try to delete that which exist
         todo_to_delete = Todo.objects.get(id=todoid)
         if todo_to_delete.owner == request.user:
             todo_to_delete.delete()
