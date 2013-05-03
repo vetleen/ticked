@@ -4,9 +4,9 @@
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/1/">First</a></li>{% for page in pagi %}
-              <li{% if page == pgnumb %} class="disabled"{% endif %}><a href="/todos/view/{{  page  }}/">{{  page  }}</a></li>{% endfor %}
-              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/{{  pgcount  }}/">Last</a></li>
+              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/ticked/1/">First</a></li>{% for page in pagi %}
+              <li{% if page == pgnumb %} class="disabled"{% endif %}><a href="/todos/view/ticked/{{  page  }}/">{{  page  }}</a></li>{% endfor %}
+              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/ticked/view/{{  pgcount  }}/">Last</a></li>
             </ul>
           </nav>
         </div><!-- / pagination -->        
@@ -21,7 +21,7 @@
 			  <ul>
 			    <li><a href="/todos/delete/{{ todo.id }}/" title="Click to delete this TODO">Delete</a></li>
   			    <li><a href="/todos/edit/{{ todo.id }}/" title="Click to edit this TODO">Edit</a></li>
-			    <li><a href="/todos/tick/{{ todo.id }}/" title="Click to mark this TODO as done">Tick!</a></li>
+			    <li><a href="/todos/untick/{{ todo.id }}/" title="Click to mark this TODO as done">Untick!</a></li>
 			  </ul>
 			</nav>
           </article>
@@ -32,7 +32,7 @@
           <article class="alert alert-info">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <h5>No todos found</h5>
-            You currently have no todos. You may add one from the menu above!
+            You currently have no unticked todos. You better get to work!
           </article>
         </div><!-- / info alert -->        
         {% endfor %}         
@@ -41,9 +41,9 @@
         <div class="span12"><!-- pagination -->
           <nav class="pagination pagination-centered">
             <ul>
-              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/1/">First</a></li>{% for page in pagi %}
-              <li{% if page == pgnumb %} class="disabled"{% endif %}><a href="/todos/view/{{  page  }}/">{{  page  }}</a></li>{% endfor %}
-              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/{{  pgcount  }}/">Last</a></li>
+              <li{% if pgnumb == 1 %} class="disabled"{% endif %}><a href="/todos/view/ticked/1/">First</a></li>{% for page in pagi %}
+              <li{% if page == pgnumb %} class="disabled"{% endif %}><a href="/todos/view/ticked/{{  page  }}/">{{  page  }}</a></li>{% endfor %}
+              <li{% if pgnumb == pgcount %} class="disabled"{% endif %}><a href="/todos/view/ticked/{{  pgcount  }}/">Last</a></li>
             </ul>
           </nav>
         </div><!-- / pagination -->  
