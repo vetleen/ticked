@@ -99,7 +99,7 @@ def ticktodoview (request, todoid):
 def unticktodoview (request, todoid):
     todo_to_untick = Todo.objects.get(id=todoid)
     if todo_to_untick.owner == request.user:
-        todo_to_untick.todo_is_ticked = True
+        todo_to_untick.todo_is_ticked = False
         todo_to_untick.save()
         return redirect(viewtickedtodoview) #add success message
     else:

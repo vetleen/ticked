@@ -101,7 +101,7 @@ def unticktodoview (request, todoid):
     if todo_to_untick.owner == request.user:
         todo_to_untick.todo_is_ticked = True
         todo_to_untick.save()
-        return redirect(viewtickedtodosview) #add success message
+        return redirect(viewtickedtodoview) #add success message
     else:
         output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
         return HttpResponse(output)
