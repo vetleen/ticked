@@ -40,7 +40,7 @@ def viewtodosview (request, pgnumb=1, message=None):
         if total_todos_selected < stop_point:
             stop_point = total_todos_selected
         return users_unticked_todos[start_point:stop_point], total_todos_selected
-    todos_to_show, total_todos_selected = getTodosToShow()
+    todos_to_show, total_todos_selected = getTodosToShow(pgnumb, todos_per_page)
     
     #count possible pages
     def getPossiblePages(total_todos_selected, todos_per_page):
