@@ -160,7 +160,7 @@ def viewtickedtodoview (request, pgnumb=1, message=None):
 
 @login_required(login_url='/user/loginrequired/')
 def deletetodoview (request, todoid):
-    if Todo.objects.get(id=todoid):
+    if Todo.objects.exist(id=todoid):
         todo_to_delete = Todo.objects.get(id=todoid)
         if todo_to_delete.owner == request.user:
             todo_to_delete.delete()
