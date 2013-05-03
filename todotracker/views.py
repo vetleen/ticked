@@ -45,6 +45,7 @@ def viewtodosview (request, pgnumb=1, message=None):
             pgcount = 1
         elif total_todos_selected > 1: #sets pgcount to the number of pages needed to get through all todos...
             pgcount = ((total_todos_selected-1)/todos_per_page)+1
+        return pgcount
     pgcount = get_possible_pages(total_todos_selected, todos_per_page)
     
     #pagination
