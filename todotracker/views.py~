@@ -87,6 +87,7 @@ def ticktodoview (request, todoid):
     todo_to_tick = Todo.objects.get(id=todoid)
     if todo_to_tick.owner == request.user:
         todo_to_tick.todo_is_ticked = True
+        todo_to_tick.date_completed = datetime.utcnow().replace(tzinfo=utc)
         todo_to_tick.save()
         return redirect(viewtodosview) #add success message
     else:
@@ -100,7 +101,7 @@ def unticktodoview (request, todoid):
     if todo_to_untick.owner == request.user:
         todo_to_untick.todo_is_ticked = True
         todo_to_untick.save()
-        return redirect(viewtodosview) #add success message
+        return redirect(viewuntickedtodosview) #add success message
     else:
         output = "Ups, it seems we tried to tick a todo that does not belong to you and had to abort, please go back and try again..."
         return HttpResponse(output)
