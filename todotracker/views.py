@@ -87,6 +87,7 @@ def ticktodoview (request, todoid):
     todo_to_tick = Todo.objects.get(id=todoid)
     if todo_to_tick.owner == request.user:
         todo_to_tick.todo_is_ticked = True
+        todo_to_tick.date_completed = datetime.utcnow().replace(tzinfo=utc)
         todo_to_tick.save()
         return redirect(viewtodosview) #add success message
     else:
@@ -106,7 +107,7 @@ def unticktodoview (request, todoid):
         return HttpResponse(output)
 
 @login_required(login_url='/user/loginrequired/')
-def viewtickedtodoview (request):
+def viewtickedtodoview (request, pgnumb=1, message=None):
     #set up
     pgnumb=int(pgnumb)
     todos_per_page=16    
@@ -120,7 +121,7 @@ def viewtickedtodoview (request):
            return two values and assign thse two values to two
            variables. Deal with it.'''
         #Get a list of all unticked todos ordered by date created
-        users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("-date_created")
+        users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=True).order_by("-date_completed")
         #Pick out only the ones we want to display
         start_point = (pgnumb*todos_per_page)-todos_per_page
         stop_point = (pgnumb*todos_per_page)
