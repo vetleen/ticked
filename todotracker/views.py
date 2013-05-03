@@ -30,9 +30,14 @@ def viewtodosview (request, pgnumb=1, message=None):
     
     #pickout the todos the user will need, and count how many todos the user have that can be displayed
     def getTodosToShow(pgnumb, todos_per_page):
-        '''Picks out the todos the user have requested to see'''
+        '''Picks out the todos the user have requested to see, 
+           and returns how many todos the user have overall,
+           its obviously bad with a function that does two things, 
+           but I did it this way because i wanted to have a function 
+           return two values and assign thse two values to two
+           variables. Deal with it.'''
         #Get a list of all unticked todos ordered by date created
-        users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created")
+        users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created").reverse()
         #Pick out only the ones we want to display
         start_point = (pgnumb*todos_per_page)-todos_per_page
         stop_point = (pgnumb*todos_per_page)
