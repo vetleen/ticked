@@ -37,7 +37,7 @@ def viewtodosview (request, pgnumb=1, message=None):
            return two values and assign thse two values to two
            variables. Deal with it.'''
         #Get a list of all unticked todos ordered by date created
-        users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created").reverse()
+        users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("-date_created")
         #Pick out only the ones we want to display
         start_point = (pgnumb*todos_per_page)-todos_per_page
         stop_point = (pgnumb*todos_per_page)
