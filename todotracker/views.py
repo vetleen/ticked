@@ -32,21 +32,23 @@ def viewtodosview (request, pgnumb=1, message=None):
     users_unticked_todos = request.user.todo_set.filter(todo_is_ticked=False).order_by("date_created")
     
     #pickout the todos the user will need
-    start_point = (pgnumb*todos_per_page)-todos_per_page
-    stop_point = (pgnumb*todos_per_page)
-    total_todos_selected = users_unticked_todos.count()
-    if total_todos_selected < stop_point:
-        stop_point = total_todos_selected
-    todos_to_show = users_unticked_todos[start_point:stop_point]
+    def getTodosToShow():
+        start_point = (pgnumb*todos_per_page)-todos_per_page
+        stop_point = (pgnumb*todos_per_page)
+        total_todos_selected = users_unticked_todos.count()
+        if total_todos_selected < stop_point:
+            stop_point = total_todos_selected
+        return users_unticked_todos[start_point:stop_point]
+    todos_to_show = getTodosToShow()
     
     #count possible pages
-    def get_possible_pages(total_todos_selected, todos_per_page):
+    def getPossiblePages(total_todos_selected, todos_per_page):
         if total_todos_selected <= 1: #avoid dividing by zero
             pgcount = 1
         elif total_todos_selected > 1: #sets pgcount to the number of pages needed to get through all todos...
             pgcount = ((total_todos_selected-1)/todos_per_page)+1
         return pgcount
-    pgcount = get_possible_pages(total_todos_selected, todos_per_page)
+    pgcount = getPossiblePages(total_todos_selected, todos_per_page)
     
     #pagination
     def getPagination(currentPage, totalNumberOfPages): #Thanks to Kim Joar Bekkelund for helping with this: https://gist.github.com/kjbekkelund/5504010
