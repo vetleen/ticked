@@ -40,12 +40,12 @@ def viewtodosview (request, pgnumb=1, message=None):
     todos_to_show = users_unticked_todos[start_point:stop_point]
     
     #count possible pages
-    def get_possible_pages(pgcount, total_todos_selected, todos_per_page):
+    def get_possible_pages(total_todos_selected, todos_per_page):
         if total_todos_selected <= 1: #avoid dividing by zero
             pgcount = 1
         elif total_todos_selected > 1: #sets pgcount to the number of pages needed to get through all todos...
             pgcount = ((total_todos_selected-1)/todos_per_page)+1
-    pgcount = get_possible_pages(pgcount, total_todos_selected, todos_per_page)
+    pgcount = get_possible_pages(total_todos_selected, todos_per_page)
     
     #pagination
     def getPagination(currentPage, totalNumberOfPages): #Thanks to Kim Joar Bekkelund for helping with this: https://gist.github.com/kjbekkelund/5504010
