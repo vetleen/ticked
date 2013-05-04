@@ -28,7 +28,7 @@
         <div class="container">
           <div class="row">
             <div class="span12">
-                <a class="brand">Tickit</a>
+                <a class="brand">Ticked</a>
             	<ul class="nav">
                   <li{% if request.path == "/frontpage/" %} class="active"{% endif %}><a href="/frontpage/">Home</a></li>{% if user.is_authenticated %}
                   <li class="dropdown{% if "/todos/" in request.path %} active{% endif %}">
