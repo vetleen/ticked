@@ -1,5 +1,4 @@
-{% load staticfiles %}
-<!DOCTYPE html>
+{% load staticfiles %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <!--[if lt IE 9]>
@@ -12,12 +11,17 @@
          margin: 0;
       }
     </style>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
     <!-- Twitter Bootstrap css-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet">
     <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet">
     <!-- Custom css-->
-    <link href="{% static "style.css" %}" rel="stylesheet">    
+    {% block special-css %}  
+    {% endblock special-css %}
+    <link href="{% static "style.css" %}" rel="stylesheet">
+    
   </head>
   <body>
     <nav class="navbar navbar-fixed-top navbar-inverse"><!-- nav-bar -->

@@ -1,7 +1,59 @@
-{% extends "base.html" %}  
+{% extends "base.html" %}
+{% block special-css %}  
+<style>
+/* STYLES FOR THE FRONT PAGE */
+body {
+    background-image: url('/static/img/frontpage_texture.png');
+    background-repeat: repeat-x;
+}
+.frontpage_darkend{
+    background-color:rgba(0,0,0,0.7);
+    height: 260px;
+    margin-top: 40px;
+    padding: 13px;
+    padding-top: 0px;
+}
+.frontpage_darkend div{
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.frontpage_darkend h1{
+    font-size: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+
+.frontpage_darkend h5{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 3;
+}
+
+.second-box-front-page-display {
+    margin-top: 40px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+</style>
+{% endblock special-css %} 
+{% load staticfiles %}
+
 {% block content %}
+      
       <section id="front-page-display" class="row"><!-- row -->
-        <div class="span8 offset2">
-          <button class="btn btn-main btn-large" >Sign up now!</button>
+        <div class="span6 frontpage_darkend">
+          <div class="row">
+              <div class="span3">
+                <h5>Know what</h5>
+                <h1>Todo.</h1>
+              </div>
+              <div class="span3 second-box-front-page-display">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..</p><br />
+                <button class="btn btn-primary btn-large" >Sign up now!</button>
+              </div>            
+          </div>
         </div>
       </section><!-- / row -->     {% endblock content %}

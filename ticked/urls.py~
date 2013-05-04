@@ -6,6 +6,7 @@ import os.path
 # admin.autodiscover()
 
 static = os.path.join(os.path.dirname(__file__), 'static')
+img = os.path.join(os.path.dirname(__file__), 'img')
 
 urlpatterns = patterns('',
     
@@ -14,7 +15,7 @@ urlpatterns = patterns('',
 
     #### TODO MANAGEMENT ####
     url(r'^todos/view/$', 'todotracker.views.viewtodosview', name='viewtodosview'),
-    url(r'^todos/view/(?P<todoid>\d*)/$', 'todotracker.views.viewtodosview', name='pagesoftodosview'),
+    url(r'^todos/view/(?P<pgnumb>\d*)/$', 'todotracker.views.viewtodosview', name='pagesoftodosview'),
     url(r'^todos/add/$', 'todotracker.views.addtodoview', name='addtodoview'),
     url(r'^todos/tick/(?P<todoid>\d*)/$', 'todotracker.views.ticktodoview', name='ticktodoview'),
     url(r'^todos/untick/(?P<todoid>\d*)/$', 'todotracker.views.unticktodoview', name='unticktodoview'),
