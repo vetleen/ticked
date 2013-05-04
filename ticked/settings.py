@@ -1,4 +1,5 @@
 # Django settings for ticked project.
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 import os.path
 
 DEBUG = True
@@ -161,6 +162,9 @@ LOGGING = {
         },
     }
 }
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
 ### Parse database configuration from $DATABASE_URL
 ##import dj_database_url
 ##DATABASES['default'] =  dj_database_url.config()

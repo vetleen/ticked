@@ -8,6 +8,7 @@
     <title>Tick it - the new todo management system</title>
     <style>
       * {
+        /* have to reset this before Bootstrap and other borrowed CSS, which might alter it again */
          margin: 0;
       }
     </style>
@@ -21,7 +22,7 @@
     <link href="{% static "style.css" %}" rel="stylesheet">
     
   </head>
-  <body{% block body-class %}{% endblock body-class %} >
+  <body{% block body-class %}{% endblock body-class %}>
     <nav class="navbar navbar-fixed-top navbar-inverse"><!-- nav-bar -->
       <div class="navbar-inner">
         <div class="container">
@@ -77,11 +78,9 @@
         <div class="row">
           <div class="span12">
             <div class="row">
-              <div class="span6"><small>&nbsp;</small>
-              </div>
-              <div class="span3">&nbsp;
+              <div class="span9"><small>&nbsp;</small>
               </div>         
-              <div class="span3"><!--<p><small>This website and content is the property of the site owner(s) and their affiliates.<br> This site is built using freely avalable tools such as <a href="https://www.djangoproject.com/">Django</a>, <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and <a href="http://jquery.com/">jQuery</a>. Pay them a visit at their respective webpages.</small></p>-->
+              <div class="span3"><p class="pull-right"><small>© 2013 The ticked team</small></p> 
               </div>       
             </div>
           </div><!-- span -->

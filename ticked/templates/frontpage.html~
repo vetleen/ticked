@@ -10,8 +10,8 @@
                 <h1>Todo.</h1>
               </div>
               <div class="span3 second-box-front-page-display">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..</p><br />
-                <button class="btn btn-inverse btn-large" >Sign up now!</button>
+                <p>Ticked is a wesite that allows you to track your daily todos. Use it instead of your normal lists or post-its to keep your desk and your mind clear.</p><br />
+                <button class="btn btn-primary btn-large" >Sign up now!</button>
               </div>            
           </div>
         </div>
