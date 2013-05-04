@@ -1,9 +1,7 @@
 {% extends "base.html" %}
-{% block body-class %} class="frontpage"{% endblock body-class %} 
+{% block body-class %} class="frontpage-body"{% endblock body-class %}
 {% load staticfiles %}
-
 {% block content %}
-      
       <section id="front-page-display" class="row"><!-- row -->
         <div class="span6 frontpage_darkend">
           <div class="row">
@@ -13,7 +11,7 @@
               </div>
               <div class="span3 second-box-front-page-display">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..</p><br />
-                <button class="btn btn-primary btn-large" >Sign up now!</button>
+                <button class="btn btn-inverse btn-large" >Sign up now!</button>
               </div>            
           </div>
         </div>

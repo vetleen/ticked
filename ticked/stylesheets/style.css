@@ -1,39 +1,40 @@
-    /* STYLES FOR THE FRONT PAGE */
-    body.frontpage {
-        background-image: url('/static/img/frontpage_texture.png');
-        background-repeat: repeat-x;
-    }
-    .frontpage_darkend{
-        background-color:rgba(0,0,0,0.7);
-        height: 260px;
-        margin-top: 40px;
-        padding: 13px;
-        padding-top: 0px;
-    }
-    .frontpage_darkend div{
-        color: #fff;
-        font-family: 'Ubuntu', sans-serif;
-    }
+/* STYLES FOR THE FRONT PAGE */
+body.frontpage-body {
+    background-image: url('/static/img/frontpage_texture.png');
+    background-repeat: repeat-x;
+}
+.frontpage_darkend{
+    background-color:rgba(0,0,0,0.7);
+    height: 260px;
+    margin-top: 40px;
+    padding: 13px;
+    padding-top: 0px;
+}
+.frontpage_darkend div{
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
 
-    .frontpage_darkend h1{
-        font-size: 100px;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: 300;
-    }
+.frontpage_darkend h1{
+    font-size: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
 
-    .frontpage_darkend h5{
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 3;
-    }
+.frontpage_darkend h5{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 3;
+}
 
-    .second-box-front-page-display {
-        margin-top: 40px;
-        font-size: 20px;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: 300;
-    }
+.second-box-front-page-display {
+    margin-top: 40px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+
 
 .light-text{
 	color: #ffffff;
